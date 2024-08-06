@@ -1,0 +1,39 @@
+IAM --Identity access Management
+Root account will control the below things.
+--IAM Permissions
+--Billing
+--Resources.
+
+users:
+#create IAM user user_naveen and through thatlogin.
+ --> try to access a s3 bucket.
+---> create policy and attach that policy to naveen_user now you are able to access the s3 bucket.
+Groups:
+#create a demo_group and add the users to that group.
+--add the policies at group level,Hence all the users can inherit the properties from group.
+
+AWS Organizations:
+------------------
+From the root account will create sub aws accounts,we can create OU(Organizational Units).eg:Dev,Qed,Prod
+--If we don't want to impact with other teams will go with isolation environments .
+
+AssumeRole:Assume role is a powerful feature in AWS Identity and Access Management (IAM) that allows users or applications to 
+temporarily obtain the permissions associated with a different role. This is useful for various scenarios such as granting temporary access, 
+delegating permissions to different AWS accounts, or performing cross-account access. 
+
+user  + Role + Policy.
+1.create test_user
+2.create a role--aws account--add permissions --amazons3fullaccess--role-name(s3-full-access)
+3.go to test_user--add permissions--inline-policy--json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",
+			"Action": "sts:AssumeRole",
+			"Resource": "arn:aws:iam::992382502754:role/s3-fully-access"  //ARN of s3bucket role.
+		}
+	]
+}
+use the console url and access the temporary access.
