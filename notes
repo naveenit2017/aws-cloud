@@ -38,6 +38,13 @@ user  + Role + Policy.
 }
 use the console url and access the temporary access.
 
+Task: Bastion Server or Jumphost server.
+
+Bastion and Jump Server are both tools used for secure remote access to servers and networks. 
+#Bastion acts as a secure gateway for accessing servers and requires users to authenticate before gaining access. 
+#Jump Server, on the other hand, is a dedicated server that acts as a middleman between the user and the target server, providing an additional layer of security. 
+ While both tools serve similar purposes, Jump Server offers more control and monitoring capabilities, making it a preferred choice for organizations with stricter security requirements.
+
 AWS Inspector:
 -------------
 Amazon Inspector is a security assessment service that helps improve the security and compliance of applications deployed on AWS. 
