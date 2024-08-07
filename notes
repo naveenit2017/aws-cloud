@@ -45,6 +45,25 @@ Bastion and Jump Server are both tools used for secure remote access to servers 
 #Jump Server, on the other hand, is a dedicated server that acts as a middleman between the user and the target server, providing an additional layer of security. 
  While both tools serve similar purposes, Jump Server offers more control and monitoring capabilities, making it a preferred choice for organizations with stricter security requirements.
 
+Practical:
+---------
+1.create VPC
+2.create IGW and attach to VPC
+3.create public-rt & private-rt
+4.create public and private subnets
+5.route table assosiation --public subnet for public-rt and edid routes provide the internet access through igw.
+6.route table assosiation --private subnet for private-rt don't provide the internet access to private subnet.
+7.create the public ec2 in public subnet and private ec2 in private subnet.
+8.and shh into public ec2 and from there ssh to private ec2.
+9.But private ec2 don't have the internet access.
+NAT Gateway(Network Adress transition):To provide the private ec2 machines internet access.
+--------------------------------------
+1.Create NAT Gateway
+2.select subnet
+3.connectivity type public.
+4.attach to private rout table 
+5.No check ping command your able get the internet access .
+
 AWS Inspector:
 -------------
 Amazon Inspector is a security assessment service that helps improve the security and compliance of applications deployed on AWS. 
