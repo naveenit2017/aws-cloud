@@ -64,6 +64,47 @@ NAT Gateway(Network Adress transition):To provide the private ec2 machines inter
 4.attach to private rout table 
 5.No check ping command your able get the internet access .
 
+userdata:while creating the ec2 machines or after creating the ec2 machines if we want to perform some kind of acctions 
+--------
+will write the peace of code or shell scripts we can write or upload it perfom the action based inputs.
+EC2 launch template:It is a template to define all the required parameters to create ec2 machine,make use of this template will create a machine.
+--------------------
+AWS LB:- Project
+-------
+steps :
+1.create vpc
+2.Create a IGW and attach to VPC
+3.create a two subnets in diffrent availabilty zones.
+4.create route table and associate subnets
+5.edit routes and provide the internet access to the RT.
+6.create 2 ec2 machines in different availabilty zones make use above create subnets.
+7.while creating add userdata to test our ALB.
+Target Group :
+1.create targetgroup & selct target type,instances or ipaddresses
+2.select VPC
+3.protocol version HTTP
+4.select instances --etc.
+ALB:
+1.create LB 
+2.select VPC
+3.select AZ
+4.select security groups which are associated with instances
+5.create 
+------------------------
+Autoscaling:
+----------
+1.create vpc
+2.Create a IGW and attach to VPC
+3.create a two subnets in diffrent availabilty zones.
+4.create route table and associate subnets
+5.edit routes and provide the internet access to the RT.
+AutoScaling Group:
+-----------------
+6.launch template
+7.provide all the details.
+
+
+
 AWS Inspector:
 -------------
 Amazon Inspector is a security assessment service that helps improve the security and compliance of applications deployed on AWS. 
