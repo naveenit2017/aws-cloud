@@ -139,6 +139,9 @@ Inspector scans EC2 instances and container images in Amazon ECR for known vulne
 
 WAF(Web Application wirewall):
 ------------------------------
+Steps:
+-----
+Create a VPC
 
 ![image](https://github.com/user-attachments/assets/9917a4dc-fcf7-4cfa-be8f-b1a77319988a)
 
