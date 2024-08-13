@@ -141,8 +141,29 @@ WAF(Web Application wirewall):
 ------------------------------
 Steps:
 -----
-Create a VPC
-
+1.Create a VPC
+2.create a internetgatway and attach to VPC.
+3.create a public subnet
+4.create route table and associate the public subnet with RT and route the internet.
+5.create a ec2 machine using userdata
+#!/bin/bash
+yes | sudo apt update
+yes | sudo apt install apache2
+echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d" " -f1)</p>" > /var/www/html/index.html
+sudo systemctl restart apache2
+6.take the ec2 instance public ip and try to acees the from the browser.
+LoadBalancer:
+--------------
+7.create LoadBalncer Target Group
+8.Create LB using that TG
+9.use the LB DNS and try to access the application from browser.
+WAF(Web Application Firewall):
+------------------------------
+10.web ACL Details.
+11.select Region
+12.go to left side tabs ipsets and create ipset rule.(use your computer ip eg.10.0.0.0/32)
+13.use that and create WebAcl rule with default values
+14.Take the LB DNS and test the application is able to access or not
 ![image](https://github.com/user-attachments/assets/9917a4dc-fcf7-4cfa-be8f-b1a77319988a)
 
 
