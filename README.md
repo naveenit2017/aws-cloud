@@ -137,6 +137,9 @@ Amazon Inspector is a security assessment service that helps improve the securit
 It automatically assesses applications for exposure, vulnerabilities, and deviations from best practices.
 Inspector scans EC2 instances and container images in Amazon ECR for known vulnerabilities, unintended network exposure, and insecure configurations.
 
+WAF(Web Application wirewall):
+------------------------------
+
 ![image](https://github.com/user-attachments/assets/9917a4dc-fcf7-4cfa-be8f-b1a77319988a)
 
 
