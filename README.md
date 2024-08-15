@@ -166,5 +166,40 @@ WAF(Web Application Firewall):
 14.Take the LB DNS and test the application is able to access or not
 ![image](https://github.com/user-attachments/assets/9917a4dc-fcf7-4cfa-be8f-b1a77319988a)
 
+VPC Peering:
+-----------
+1.Create a VPC-A
+2.create a internetgatway and attach to VPC.
+3.create a public subnet
+4.create route table and associate the public subnet with RT and route the internet.
+5.create a ec2 machine using userdata
+#!/bin/bash
+yes | sudo apt update
+yes | sudo apt install apache2
+echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d" " -f1)</p>" > /var/www/html/index.html
+sudo systemctl restart apache2
+6.take the ec2 instance public ip and try to acees the from the browser.
+
+1.Create a VPC-B
+2.create a internetgatway and attach to VPC.
+3.create a public subnet
+4.create route table and associate the public subnet with RT and route the internet.
+5.create a ec2 machine using userdata
+#!/bin/bash
+yes | sudo apt update
+yes | sudo apt install apache2
+echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d" " -f1)</p>" > /var/www/html/index.html
+sudo systemctl restart apache2
+6.take the ec2 instance public ip and try to acees the from the browser.
+Create VPC Peering connection :
+-------------------------------
+1.give peering coonection name
+2.select source VPC
+3.Select destination VPC
+4.Establish the connection
+5.Acceptence the peering connection -->go peering connection --actions--accept
+6.change the route table routes vice versa.
+7.test the coneection
+8.login ec2 aand take the another machine private ip and try with curl <private-ip>
 
 
