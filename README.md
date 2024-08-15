@@ -205,6 +205,7 @@ Create VPC Peering connection :
 Transit Gateway:
 ----------------
 To communicate with multiple VPCs will go with Transit Gateway,morethan two VPC peering is not good solution, we can implement.
+
 ![image](https://github.com/user-attachments/assets/242764a9-514d-46a3-9499-da8eb645d26f)
 
 
