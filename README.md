@@ -208,5 +208,10 @@ To communicate with multiple VPCs will go with Transit Gateway,morethan two VPC 
 
 ![image](https://github.com/user-attachments/assets/242764a9-514d-46a3-9499-da8eb645d26f)
 
+NAT(Network Address Transilation) Gatway:
+-----------------------------------------
+![image](https://github.com/user-attachments/assets/08bb2964-8fd7-4e30-a357-d17f57a12b18)
+
+
 
 
