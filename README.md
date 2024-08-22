@@ -209,7 +209,7 @@ To communicate with multiple VPCs will go with Transit Gateway,morethan two VPC 
 ![image](https://github.com/user-attachments/assets/242764a9-514d-46a3-9499-da8eb645d26f)
 Implementaition:
 ---------------
-create 3 VPCs A,B,& C follow below steps.
+create 3 VPCs A,B,& C follow below steps.(All the vpc should follow)
 1.Create a VPC-A
 2.create a internetgatway and attach to VPC.
 3.create a public subnet
@@ -221,6 +221,12 @@ yes | sudo apt install apache2
 echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d" " -f1)</p>" > /var/www/html/index.html
 sudo systemctl restart apache2
 6.take the ec2 instance public ip and try to acees the from the browser.
+create transit gateway:
+-----------------------
+7.create a transitgatway my-vpc-a-b-c-transitgateway.
+8.create tranistgateway attachement with all the vpc make use of transitgateway.
+9.next go to the vpc routetables and add the sources of the vpcs cid range and should be the target is transitgateway  do it for all vpcs with all the vpcs vice versa.
+10.login ec2 aand take the another machine private ip and try with curl <private-ip> you are able to access,without routes not able to connect.
 
 NAT(Network Address Transilation) Gatway:
 -----------------------------------------
