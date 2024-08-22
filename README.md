@@ -207,6 +207,20 @@ Transit Gateway:
 To communicate with multiple VPCs will go with Transit Gateway,morethan two VPC peering is not good solution, we can implement.
 
 ![image](https://github.com/user-attachments/assets/242764a9-514d-46a3-9499-da8eb645d26f)
+Implementaition:
+---------------
+create 3 VPCs A,B,& C follow below steps.
+1.Create a VPC-A
+2.create a internetgatway and attach to VPC.
+3.create a public subnet
+4.create route table and associate the public subnet with RT and route the internet.
+5.create a ec2 machine using userdata
+#!/bin/bash
+yes | sudo apt update
+yes | sudo apt install apache2
+echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d" " -f1)</p>" > /var/www/html/index.html
+sudo systemctl restart apache2
+6.take the ec2 instance public ip and try to acees the from the browser.
 
 NAT(Network Address Transilation) Gatway:
 -----------------------------------------
