@@ -238,7 +238,30 @@ Amazon Route 53 is a scalable and highly available Domain Name System (DNS) web 
 and resources within AWS and beyond.
 
 ![image](https://github.com/user-attachments/assets/c3bbd6d0-a3e7-4ed1-aabb-6b16e94028f3)
+Ater creating a hosted zone in AWS it will create 2 records by default.
+1.NS Record
+2.SOA
+3.A record we have to create make use of our based requirement will use routing policy
+eg.simple routing,weighted routing ..etc.
 ![image](https://github.com/user-attachments/assets/19558643-21cc-46ee-ab32-28e685e147d7)
+
+ACM(AWS Certificate Manager):
+----------------------------
+AWS Certificate Manager (ACM) is a service provided by Amazon Web Services (AWS) that helps you provision, manage, and deploy SSL/TLS certificates for your AWS-based applications. SSL/TLS certificates are used to secure network communications and establish the identity of websites over the internet, ensuring data privacy and integrity.
+
+
+![image](https://github.com/user-attachments/assets/275e6156-6a1d-4fd5-a7a8-381b68011098)
+
+
+Creation of certificate:
+Go to the ACM --Request certificate--Request a public Request(SSL/TLS) --provide a domain name--and select required fields as per your requirement and create.
+Once the create of certficate select the certficate-->create records in Route53
+Please go and observe the Route53 hosted zones records,there will be a record imported with type CNAME and if obsevre the ACM the criticate status will show issued.
+Next: we need to change the load balncer listner by default wich is associated with http & 80,need open with https &443
+As well as need to open https port in Security group also.
+1.If type explictly it will go to the https otherwise it will go http.
+2.Hence we can redirect the http to https--go to LB listners and select the ridirect and select with http and port should be 443.
+
 
 
 
