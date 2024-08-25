@@ -262,6 +262,26 @@ As well as need to open https port in Security group also.
 1.If type explictly it will go to the https otherwise it will go http.
 2.Hence we can redirect the http to https--go to LB listners and select the ridirect and select with http and port should be 443.
 
+VPC Endpoint:-
+---------------
+An Amazon VPC (Virtual Private Cloud) Endpoint is a feature in AWS that enables private connections between your VPC and supported AWS services and VPC endpoint services powered by AWS PrivateLink. 
+This connection is made without the need to traverse the public internet, providing enhanced security and performance.
+steps:-
+------
+1.search in aws console--VPC ENDPOINT
+2.create endpoint(myendpoint)
+3.service category(select aws services)
+4.select services(eg:s3)
+5.select type as gateway
+6.select the vpc and private route table.
+7.create vpcendpoint.
+Now we are able to provide the internet access to the private subnets without having the public internet access.
+
+![image](https://github.com/user-attachments/assets/565bd142-3584-4de6-99f0-3c73f9ffe10a)
+
+
+
+
 
 
 
