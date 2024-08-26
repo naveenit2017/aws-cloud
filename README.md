@@ -282,7 +282,25 @@ Now we are able to provide the internet access to the private subnets without ha
 Network LoadBalancer vs Application LoadBalancer:
 -------------------------------------------------
 
+Practical:
+1.Create a VPC-Demo
+2.create a internetgatway and attach to VPC.
+3.create 2 public subnet and private subnets
+4.create route table and associate the public subnet with RT and route the internet.
+5.create 2 ec2 machine using userdata in 2 diffrent availability zones.
+#!/bin/bash
+yes | sudo apt update
+yes | sudo apt install apache2
+echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d" " -f1)</p>" > /var/www/html/index.html
+sudo systemctl restart apache2
+6.take the ec2 instance public ip and try to acees the from the browser.
+
 ![image](https://github.com/user-attachments/assets/f63aa2b6-8990-40ac-b476-bc22afc2420e)
+
+NLB--won't support the pathbased routing it will accept the only one targetgroup listners,won't possible multiple groups.(IT will work on OSI model Application Layer7 and support http,https)
+ALB --Will support path based routing we can add the based on our requirement multiple targetgroups based on our requirement.(IT will work on OSI model Transport Layer 4 and support TCP,UDP)
+
+![image](https://github.com/user-attachments/assets/55c37cd2-4109-437e-b5c6-55407bfeb3b8)
 
 
 
