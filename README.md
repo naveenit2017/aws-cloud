@@ -279,6 +279,13 @@ Now we are able to provide the internet access to the private subnets without ha
 
 ![image](https://github.com/user-attachments/assets/565bd142-3584-4de6-99f0-3c73f9ffe10a)
 
+Network LoadBalancer vs Application LoadBalancer:
+-------------------------------------------------
+
+![image](https://github.com/user-attachments/assets/f63aa2b6-8990-40ac-b476-bc22afc2420e)
+
+
+
 
 
 
