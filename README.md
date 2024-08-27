@@ -302,6 +302,18 @@ ALB --Will support path based routing we can add the based on our requirement mu
 
 ![image](https://github.com/user-attachments/assets/55c37cd2-4109-437e-b5c6-55407bfeb3b8)
 
+NLB,APLB and GWLB:
+------------------
+Network Load Balancer (NLB): Operates at Layer 4 (Transport Layer) of the OSI model. It balances traffic based on IP protocol data, such as TCP/UDP connections.
+---------------------------
+Application Load Balancer (ALB):
+--------------------------------
+Operates at Layer 7 (Application Layer) of the OSI model.It balances traffic based on application-level data, such as HTTP/HTTPS requests.
+Gateway Load Balancer (GWLB):
+-----------------------------
+Operates at Layer 3 (Network Layer) of the OSI model. It is designed to route and load balance network traffic across virtual appliances, such as firewalls, intrusion detection systems, or other network security appliances.
+
+
 
 
 
