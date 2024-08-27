@@ -313,6 +313,13 @@ Gateway Load Balancer (GWLB):
 -----------------------------
 Operates at Layer 3 (Network Layer) of the OSI model. It is designed to route and load balance network traffic across virtual appliances, such as firewalls, intrusion detection systems, or other network security appliances.
 
+AWS PrivateLink:
+---------------
+Suppose you have a VPC in which you run a critical application that needs to store data in Amazon S3. Instead of sending data to S3 over the public internet, you can set up an interface VPC endpoint using PrivateLink. This way, your application's traffic to S3 remains within AWS, increasing security and reducing latency.
+
+Practical:
+![image](https://github.com/user-attachments/assets/f28b9142-c6f4-45bd-96fb-09df6d71947f)
+
 
 
 
