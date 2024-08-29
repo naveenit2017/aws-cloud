@@ -320,6 +320,53 @@ Suppose you have a VPC in which you run a critical application that needs to sto
 Practical:
 ![image](https://github.com/user-attachments/assets/f28b9142-c6f4-45bd-96fb-09df6d71947f)
 
+AWS Lambda:
+-----------
+![image](https://github.com/user-attachments/assets/e151bf5a-413a-49cb-be48-d4777d761e94)
+
+What is lambda:
+--------------
+AWS Lambda is a serverless computing service provided by Amazon Web Services (AWS). It allows you to run code in response to events without provisioning or managing servers.
+AWS Lambda automatically scales your application by running your code in response to each trigger, and you only pay for the compute time consumed.
+
+Lamda function creation:
+------------------------
+import json
+import boto3
+
+
+def lambda_handler(event, context):
+    # TODO implement
+    print("Hello this is from lamda naveen ")
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda! sssssss')
+    }
+How to create a zip file to upload:
+----------------------------------
+1.write a code in visual studio 
+2.run the python -m venv .(it will create a virtual environment with required dependencies)
+3.go to the project locatiom and zip
+4.create a lamda function in AWS
+5.upload the zip file into aws
+6.the lambda_handler function must be use like(test_lambda(it is a filename).lambda_handler)
+7.test the code .
+How to upload the zip code in s3:
+-----------------------------------
+1.select the same regions
+2.create a s3 bucket and upload the zip
+3.create the lambda function
+4.pass the zip file ARN(from get it S3)
+5.test it.
+
+Lambda Layers:
+-------------
+Custom library,will put all are required dependecies togeather in one package or library which can be useful to multiple AWS Lamda functions.
+![image](https://github.com/user-attachments/assets/544a0449-1a41-4f6e-8ce2-277c22973907)
+
+
+
+
 
 
 
