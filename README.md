@@ -364,6 +364,32 @@ Lambda Layers:
 Custom library,will put all are required dependecies togeather in one package or library which can be useful to multiple AWS Lamda functions.
 ![image](https://github.com/user-attachments/assets/544a0449-1a41-4f6e-8ce2-277c22973907)
 
+**VPC Flowlogs:**
+------------------
+![image](https://github.com/user-attachments/assets/bc143333-c081-45e4-99c5-213695e93069)
+
+VPC Flow Logs is an AWS feature that enables you to capture and monitor the network traffic data (IP traffic) flowing to and from your Virtual Private Cloud (VPC). Flow logs help you analyze traffic patterns, troubleshoot network issues, and ensure the security of your VPC resources.
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "vpc-flow-logs.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+use the above aasume role and attach the CloudWatchFullAccess policy.
+#create IAM Roles --ec2 IAM role for (Demo-SSM-Role) using AmazonSSMManagedInstanceCore,create IAM Role with custom trusted policy
+#create vpc,subnet,ec2 while creating ec2 in advanced use Demo-SSM-Role where profile section.
+#create in Cloudwatch ,there create loggroup ,go vpc--create vpc-flow-logs by using the custom role.
+https://github.com/acantril/learn-cantrill-io-labs/tree/master/00-aws-simple-demos/aws-vpc-flow-logs
+
+
+
 
 
 
