@@ -387,7 +387,58 @@ use the above aasume role and attach the CloudWatchFullAccess policy.
 #create vpc,subnet,ec2 while creating ec2 in advanced use Demo-SSM-Role where profile section.
 #create in Cloudwatch ,there create loggroup ,go vpc--create vpc-flow-logs by using the custom role.
 https://github.com/acantril/learn-cantrill-io-labs/tree/master/00-aws-simple-demos/aws-vpc-flow-logs
+------------------------------------
 
+RDS(Raltional Database Service):
+--------------------------------
+Amazon RDS (Relational Database Service) is a managed relational database service provided by AWS. It simplifies the setup, operation, and scaling of a relational database in the cloud. RDS supports multiple database engines.
+eg:Aura,mysql,oracle...etc.
+
+Key Features of Amazon RDS:
+---------------------------
+Managed Service: AWS handles database administration tasks such as backups, patch management, and replication.
+----------------
+Scalability: Easily scale the database’s compute and storage resources.
+------------
+High Availability: RDS supports Multi-AZ deployments for high availability and read replicas for read scaling.
+-----------------
+Automated Backups: Automatic backups and snapshots can be configured, providing data protection.
+-----------------
+Security: RDS integrates with AWS Identity and Access Management (IAM) and can be isolated in a VPC for enhanced security.
+---------
+Performance: AWS provides optimized configurations and instance types tailored for database workloads.
+-----------
+Create RDS Database steps:
+--------------------------
+1.create a database 
+2.select a method standard/easy
+3.select Engine Options(Mysql,Oracle..etc)
+4.select Engine version(Database version)
+5.Templates(Dev,Prod,free tier)
+6.username,password..vpc,replication.....etc
+7.create the database.
+
+Connect to RDS DB(mysql):
+-------------------------
+1.That machine should have mysql client
+2.sudo mysql -h my-rd-database-1.cpss0s68exsu.us-east-2.rds.amazonaws.com -P 3306 -u root -p
+3.create database(create database mydb)
+4.make use the database(use mydb)
+5.create table.
+
+Migration on-primise or ec2 to RDS:
+-----------------------------------
+1.take the backup from ec2(dump of ec2)
+2.mysql -u root -p  < testdump.sql
+3.restore the backup(migrate)
+4.mysql -h my-rd-database-1.cpss0s68exsu.us-east-2.rds.amazonaws.com -P 3306 -u root -p < testdump.sql
+5.please login the RDS Database and check the respective database tables.
+
+Migration DMS:(Data Migration Service)
+--------------------------------------
+1.create Replication instance
+2.Endpoints create source and destination endpoints while creating please check the proper connection able to communicate.
+3.Create database migration task
 
 
 
