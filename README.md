@@ -464,6 +464,14 @@ On-primse to AWS Cloud Migration:
 8.Go and observe the AWS Application Migration service console,it will lauch a soruce machine .
 9.And follow the next steps for Cutover.
 
+Amazon WorkDocs:
+---------------
+Amazon WorkDocs is a fully managed, secure content creation, storage, and collaboration service provided by AWS. It allows users to create, edit, share, and collaborate on documents, spreadsheets, presentations, and other content in real-time, similar to services like Google Drive or Microsoft OneDrive.
+
+Amazon Workdrive:
+-----------------
+Amazon WorkDocs Drive is a feature of Amazon WorkDocs that allows users to access their Amazon WorkDocs files directly from their desktop as if they were stored locally. It functions similarly to other cloud storage services like Dropbox or Google Drive, providing seamless access to cloud-stored documents and files through a familiar file explorer interface.
+
 
 
 
