@@ -436,10 +436,33 @@ Migration on-primise or ec2 to RDS:
 
 Migration DMS:(Data Migration Service)
 --------------------------------------
+Analasysis:(Before going to proceed Migration)
+---------------------------------------------
+#.Go to Environment and observe the existing infra.
+#.Check around the environment
+#.Talk to client
+#.Ask Questions and know specifications
+#.Alo ask for the access.
+==Migration steps===============
 1.create Replication instance
 2.Endpoints create source and destination endpoints while creating please check the proper connection able to communicate.
 3.Create database migration task
 
+
+On-primse to AWS Cloud Migration:
+--------------------------------
+1.Here create EC2 machine in another region it will be act as a On-primse.
+2.create Ec2 Machine in any one of the region(source machine).
+3.host a webb application on that machine
+4.create MGNuser and attach the below policy to user.
+#AWSApplicationMigrationAgentPolicy
+5.create accesskey & secretkey store it in note pad.
+6.create a replication launch template in(AWS Migration Service) target location,i'e another region with default values.
+7.Install AWS Agent on source machine by using below command
+ #wget -O ./aws-replication-installer-init https://aws-application-migration-service-us-east-1.s3.us-east-1.amazonaws.com/latest/linux/aws-replication-installer-init.py
+ #sudo python3 aws-replication-installer-init.py
+8.Go and observe the AWS Application Migration service console,it will lauch a soruce machine .
+9.And follow the next steps for Cutover.
 
 
 
